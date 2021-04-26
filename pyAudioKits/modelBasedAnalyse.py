@@ -6,7 +6,7 @@ import pandas as pd
 
 def MFCC(audio,p=13,frameDuration=0.03,overlapRate=0.5):
     windowLength=int(frameDuration*audio.sr)
-    step=int(windowLength*overlapRate)
+    step=int(windowLength*(1-overlapRate))
     wav_feature=mfcc(audio.samples,audio.sr,numcep=p,winlen=windowLength/audio.sr,winstep=step/audio.sr)
     d_mfcc_feat = delta(wav_feature, 1)
     d_mfcc_feat2 = delta(wav_feature, 2)
@@ -14,7 +14,7 @@ def MFCC(audio,p=13,frameDuration=0.03,overlapRate=0.5):
     
 def LPC(audio,p=10,frameDuration=0.03,overlapRate=0.5):
     windowLength=int(frameDuration*audio.sr)
-    step=int(windowLength*overlapRate)
+    step=int(windowLength*(1-overlapRate))
     y1=audio.samples[:-1]-0.97*audio.samples[:-1]
     l=audio.samples.shape[0]
     indexer = np.arange(windowLength)[None, :] + step*np.arange(int((l-windowLength)/step))[:, None]

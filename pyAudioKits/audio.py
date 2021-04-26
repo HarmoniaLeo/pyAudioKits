@@ -1,10 +1,8 @@
 import librosa
 import librosa.display
-import librosa.effects
 from pyaudio import PyAudio, paInt16
 from playsound import playsound
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d.axes3d import Axes3D
 import wave
 import numpy as np
 import threading
