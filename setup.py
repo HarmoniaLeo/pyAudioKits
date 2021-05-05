@@ -7,7 +7,7 @@ setup(name='pyAudioKits',
       author_email='1532282692@qq.com',
       maintainer='HarmoniaLeo',
       maintainer_email='1532282692@qq.com',
-      packages=['pyAudioKits'],
+      packages=['pyAudioKits.filters','pyAudioKits.freqDomainAnalyse','pyAudioKits.timeDomainAnalyse','pyAudioKits.audio','pyAudioKits.modelBasedAnalyse'],
       license="Public domain",
       platforms=["any"],
      )
