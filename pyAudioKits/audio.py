@@ -1,6 +1,5 @@
 import librosa
 import librosa.display
-from pyaudio import PyAudio, paInt16
 from playsound import playsound
 import matplotlib.pyplot as plt
 import wave
