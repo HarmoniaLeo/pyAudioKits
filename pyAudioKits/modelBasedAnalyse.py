@@ -1,7 +1,7 @@
 from python_speech_features import mfcc,delta
 from sklearn.linear_model import LinearRegression
 import numpy as np
-from pyAudioKits.audio import Audio,typeJudge,isType
+from pyAudioKits.audio import Audio,typeJudge
 import librosa
 from scipy.fftpack import fft,ifft
 import ctypes as ct
@@ -43,7 +43,6 @@ def MFCC(input,p=13,frameDuration=0.03,overlapRate=0.5):
 
     return: A 2-D NumPy array of MFCC features. Each row will be MFCC features of one frame. 
     """
-    isType(input,"Audio")
     windowLength=int(frameDuration*input.sr)
     step=int(windowLength*(1-overlapRate))
     wav_feature=mfcc(input.samples,input.sr,numcep=p,winlen=windowLength/input.sr,winstep=step/input.sr)
@@ -98,7 +97,6 @@ def LPC(input,p=10):
         List of LPC error of each frame. 
         List of LPC coefficient of each frame. 
     """
-    isType(input,"AudioFrames")
     y1=input.samples
     es=[]
     ws=[]

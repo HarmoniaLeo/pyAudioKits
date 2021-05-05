@@ -1,5 +1,5 @@
 from scipy.fftpack import fft,ifft
-from pyAudioKits.audio import Audio,typeJudge,isType
+from pyAudioKits.audio import Audio,typeJudge
 import matplotlib.pyplot as plt
 import librosa
 import numpy as np
@@ -23,7 +23,6 @@ def specEntropy(input):
         If input is an Audio object: Spectral entropy of the whole audio. 
         If input is an AudioFrame object: A numpy array for spectral entropy of each frame. 
     """
-    isType(input)
     return calculate_H(input.samples,input.sr)
 
 def PSD(input,N=None):
@@ -35,7 +34,6 @@ def PSD(input,N=None):
         If input is an Audio object: Power spectral density of the whole audio. 
         If input is an AudioFrame object: A numpy array for power spectral density of each frame. 
     """
-    isType(input)
     if N is None:
         N=input.samples.shape[0]
     freq=fft(input.samples,N,axis=0)
@@ -112,7 +110,6 @@ def FFT(input,N=None):
     N: Num of Fourier Transform points. None if use all points. 
     return: An AudioFrequency object. 
     """
-    isType(input)
     sr=input.sr
     if N is None:
         N=input.samples.shape[0]

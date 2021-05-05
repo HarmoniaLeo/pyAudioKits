@@ -1,5 +1,6 @@
 import librosa
 import librosa.display
+from pyaudio import PyAudio, paInt16
 from playsound import playsound
 import matplotlib.pyplot as plt
 import wave
@@ -210,17 +211,6 @@ def typeJudge(input,samples):
         return Audio(samples,input.sr)
     if type(input)==AudioFrames:
         return AudioFrames(samples,input.sr,input.step,input.window)
-
-def isType(input,t="all"):
-    if t=="all":
-        if (type(input)!=Audio) and (type(input)!=AudioFrames):
-            raise Exception("The input should be Audio or AudioFrames. ")
-    elif t=="Audio":
-        if type(input)!=Audio:
-            raise Exception("The input should be Audio. ")
-    elif t=="AudioFrames":
-        if type(input)!=AudioFrames:
-            raise Exception("The input should be AudioFrames. ")
 
 def read_Audio(direction):
     """Get audio file from specified path. Dual channel audio returns a tuple. 

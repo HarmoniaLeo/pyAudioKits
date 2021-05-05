@@ -1,7 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import librosa
-from pyAudioKits.audio import isType
 
 def energyCal(frame_w):
     return 10*np.log(np.sum(np.power(frame_w,2),axis=0)+1e-6)
@@ -19,7 +18,6 @@ def power(input):
         If input is an Audio object: Power of the whole audio. 
         If input is an AudioFrame object: A numpy array for power of each frame. 
     """
-    isType(input)
     return np.sum(input.samples**2,axis=0)/input.samples.shape[0]
 
 def logEnergy(input):
@@ -30,7 +28,6 @@ def logEnergy(input):
         If input is an Audio object: Log energy of the whole audio. 
         If input is an AudioFrame object: A numpy array for log energy of each frame. 
     """
-    isType(input)
     return energyCal(input.samples)
 
 def overzero(input):
@@ -39,7 +36,6 @@ def overzero(input):
     input: An AudioFrames object. 
     return: A numpy array for over-zero rate of each frame. 
     """
-    isType(input,t="AudioFrames")
     return overzeroCal(input.samples,input.sr)
 
 def correlate(input1,input2):
@@ -51,10 +47,6 @@ def correlate(input1,input2):
         A numpy array for correlation result with length of (len(audio1.samples)+len(audio2.samples)-1).
         A 2-D numpy array for short-time correlation result for each frames.
     """
-    if type(input1)!=type(input2):
-        raise Exception("The two inputs should be the same type. ")
-    isType(input1)
-    isType(input2)
     return np.correlate(input1.samples,input2.samples,"full")
 
 def snr(signal,signalAndNoise):
@@ -64,10 +56,6 @@ def snr(signal,signalAndNoise):
     signalAndNoise: An Audio object. Signal mixed with noise. 
     return: A float object of the SNR(dB). 
     """
-    if type(signal)!=type(signalAndNoise):
-        raise Exception("The signal and signalAndNoise should both be Audio. ")
-    isType(signal,"Audio")
-    isType(signalAndNoise,"Audio")
     noise=signalAndNoise-signal
     signalPower=power(signal)
     noisePower=power(noise)
@@ -82,10 +70,6 @@ def mixWithSNR(signal,noise,snr,maintain="signal"):
     maintain: maintain="signal" to maintain the intensity of signal while maintain="noise" to maintain the intensity of noise. 
     return: An Audio object. Signal mixed with noise. 
     """
-    if type(signal)!=type(noise):
-        raise Exception("The signal and noise should both be Audio. ")
-    isType(signal,"Audio")
-    isType(noise,"Audio")
     signalPower=power(signal)
     noisePower=power(noise)
     snrNow=10*np.log10(signalPower/noisePower)

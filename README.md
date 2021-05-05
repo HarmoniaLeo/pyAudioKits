@@ -3,6 +3,7 @@ Powerful Python audio workflow support based on librosa and other libraries
 
 ```
 !python3 -m pip install --index-url https://test.pypi.org/simple/ --no-deps pyAudioKits
+!
 ```
 
 ## Basic usage
