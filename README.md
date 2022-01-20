@@ -26,7 +26,7 @@ ak.audio.start_record(sr)	#Begin a recording thread.
 
 audio=ak.end_record(sr)	#End a recording thread and return an audio with the sample rate of sr. The sr should be equal to the value when you began a recording thread. 
 
-audio=ak.create_Single_Freq_Audio(amp,freq,sr,time)	#Generate a sine wave with amplitude of amp, frequency of freq, sampling rate of sr and duration of time (seconds).
+audio=ak.create_Single_Freq_Audio(amp,freq,sr,time,phase)	#Generate a sine wave with amplitude of amp, frequency of freq, sampling rate of sr, duration of time (seconds) and phase of phase (default 0).
 ```
 
 ### Manipulate
