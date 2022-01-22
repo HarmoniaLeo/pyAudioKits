@@ -147,7 +147,7 @@ freq=fda.FFT(input,N)	#Doing N-points FFT (for Audio) or STFT (for AudioFrames) 
 
 freq.plot(axes,imgPath=None)	#To draw the spectrum on the sub graph. If no subgraph is passed in, it will be displayed directly. If imgpath is passed in, the graph will be saved
 
-freq.plot(startTime,endTime)	#The min frequency point and the max frequency point can also be specified. Defaultly, minf = 0 and maxf = Half of the sample rate
+freq.plot(startFreq,endFreq)	#The min frequency point and the max frequency point can also be specified. Defaultly, minf = 0 and maxf = Half of the sample rate
 
 freq.plot()	#If the AudioFrequency object was derived from an AudioFrame object, then display the spectrogram
 
