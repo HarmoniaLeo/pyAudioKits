@@ -1359,6 +1359,8 @@ Return: An **Audio object** of filtered signal.
 
 ### Speech Recognition
 
+**For more details of this section, please refer to:** [**6. Endpoint Detection and Speech Recognition.ipynb**](https://github.com/HarmoniaLeo/pyAudioKits/blob/main/6.%20Endpoint%20Detection%20and%20Speech%20Recognition.ipynb)
+
 #### DTW
 
 ```python
