@@ -547,6 +547,8 @@ Return: An **Audio object**.
 
 ## Time domain analyse
 
+**For more details of this section, please refer to:** [**2. Musical tone and Noise.ipynb**](https://github.com/HarmoniaLeo/pyAudioKits/blob/main/2.%20Musical%20tone%20and%20Noise.ipynb) **and** [**4. Short-time Analysis Method for Audio Signals.ipynb**](https://github.com/HarmoniaLeo/pyAudioKits/blob/main/4.%20Short-time%20Analysis%20Method%20for%20Audio%20Signals.ipynb) 
+
 ```python
 import pyAudioKits.analyse as aly
 ```
@@ -861,6 +863,8 @@ If imgpath is passed in, the graph will be saved.
 
 ## Frequency domain analyse
 
+**For more details of this section, please refer to:** [**3. Fourier Transform: from Time domain to Frequency domain.ipynb**](https://github.com/HarmoniaLeo/pyAudioKits/blob/main/3.%20Fourier%20Transform:%20from%20Time%20domain%20to%20Frequency%20domain.ipynb) **and** [**4. Short-time Analysis Method for Audio Signals.ipynb**](https://github.com/HarmoniaLeo/pyAudioKits/blob/main/4.%20Short-time%20Analysis%20Method%20for%20Audio%20Signals.ipynb) 
+
 ```python
 import pyAudioKits.analyse as aly
 ```
@@ -1102,6 +1106,8 @@ If imgpath is passed in, the graph will be saved.
 
 ## Model based analyse
 
+**For more details of this section, please refer to:** [**6. Endpoint Detection and Speech Recognition.ipynb**](https://github.com/HarmoniaLeo/pyAudioKits/blob/main/6.%20Endpoint%20Detection%20and%20Speech%20Recognition.ipynb)
+
 ```python
 import pyAudioKits.analyse as aly
 ```
@@ -1174,6 +1180,8 @@ Return: A list object of LPC error of each frame and a list object of LPC coeffi
 
 ## Filter
 
+**For more details of this section, please refer to:** [**5. LTI Filter.ipynb**](https://github.com/HarmoniaLeo/pyAudioKits/blob/main/5.%20LTI%20Filter.ipynb)
+
 ```python
 import pyAudioKits.filters as flt
 ```
@@ -1232,6 +1240,8 @@ import pyAudioKits.algorithm as alg
 
 ### Speech Endpoint Detection
 
+**For more details of this section, please refer to:** [**6. Endpoint Detection and Speech Recognition.ipynb**](https://github.com/HarmoniaLeo/pyAudioKits/blob/main/6.%20Endpoint%20Detection%20and%20Speech%20Recognition.ipynb)
+
 ```python
 vad_result = alg.VAD(input,energyThresLow,energyThresHigh,zerocrossingThres,frameDuration = 0.03,overlapRate=0.5)
 ```
@@ -1269,6 +1279,8 @@ Return the slices of voices in audio.
 Return: A list for **Audio objects**. 
 
 ### Speech Enhancement
+
+**For more details of this section, please refer to:** [**7. Speech enhancement: spectral subtraction, Wiener and Kalman.ipynb**](https://github.com/HarmoniaLeo/pyAudioKits/blob/main/7.%20Speech%20enhancement:%20spectral%20subtraction%2C%20Wiener%20and%20Kalman.ipynb)
 
 #### Spectrum subtraction
 
