@@ -8,6 +8,7 @@
     - [The Audio object](#the-audio-object)
       - [Play](#play)
       - [Plot](#plot)
+      - [To NumPy Array](#to-numpy-array)
       - [Get Properties](#get-properties)
       - [Save](#save)
       - [Indexing and Slicing](#indexing-and-slicing)
@@ -21,6 +22,7 @@
       - [Padding](#padding)
       - [Framing and Windowing](#framing-and-windowing)
     - [The AudioFrames object](#the-audioframes-object)
+      - [To NumPy Array](#to-numpy-array-1)
       - [Get Properties](#get-properties-1)
       - [Indexing and Slicing](#indexing-and-slicing-1)
       - [Retrieve](#retrieve)
@@ -217,6 +219,16 @@ If imgpath is passed in, the graph will be saved.
 * imgPath: The path to save the graph. 
 
 * xlabel: "t/s", "t/ms" or "n". 
+
+#### To NumPy Array
+
+```python
+array = audio.samples
+```
+
+Get all samples in the audio.
+
+Return: NumPy array.
 
 #### Get Properties
 
@@ -442,6 +454,16 @@ Framing and windowing the audio.
 Return: An **AudioFrames object**. 
 
 ### The AudioFrames object
+
+#### To NumPy Array
+
+```python
+array = audioFrames.samples
+```
+
+Get all samples in the audio, which is a $K\times M$ NumPy array, where $K$ is the count of frames and $M$ is the length of a frame in samples counts. 
+
+Return: NumPy array.
 
 #### Get Properties
 
