@@ -751,7 +751,7 @@ Selecting part of the result.
   * default = 1 sample offset. 
 * index_type: "t/s", "t/ms" or "k". 
 
-Return: An **Audio object** of part of the audio. 
+Return: An 1-D NumPy array for part of the result. 
 
 ```python
 result = time_delta_axis_ds.plot(start=0, end=None, ylim=None, ax=None, imgPath=None, xlabel="t/s")
