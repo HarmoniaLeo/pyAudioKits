@@ -981,7 +981,7 @@ Get statistics spectrum.
 
 Return: A one-dimensional NumPy array whose length is equal to $N/2$ , where $N$ is the number of points in FFT. 
 
-freq_delta_axis_ds object supports **one-dimensional indexes and slices**. Any value used in the index represents the frequency point if it is an integer, or the frequency in Hz if it is a floating point number. 
+freq_axis_ds object supports **one-dimensional indexes and slices**. Any value used in the index represents the frequency point if it is an integer, or the frequency in Hz if it is a floating point number. 
 
 Return: An 1-D NumPy array for part of the result spectrum. 
 
