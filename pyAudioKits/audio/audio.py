@@ -105,7 +105,8 @@ class Audio(time_axis_ds):
         newRate: An int object for the new sample rate.
         return: An Audio object. 
         """
-        return Audio(librosa.resample(self.samples,self.sr,newRate),newRate)
+        res = librosa.resample(y=self.samples,orig_sr=self.sr,target_sr=newRate)
+        return Audio(res,newRate)
 
     def addWgn(self,snr):
         """Add white noise of specific intensity. 
